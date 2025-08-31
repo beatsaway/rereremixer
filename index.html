@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MemeMePiano - Audio Remixer Projects</title>
+    <title>ReReRemixer V1.01</title>
     <style>
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -15,6 +15,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             line-height: 1.6;
         }
         
@@ -25,14 +26,13 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(20px);
             border: 2px solid rgba(0, 255, 136, 0.4);
-            max-width: 800px;
+            max-width: 600px;
             width: 100%;
             text-align: center;
-            margin-bottom: 20px;
         }
         
         .title {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-size: 3.5em;
             font-weight: 900;
             background: linear-gradient(45deg, #00ff88, #ff0088, #0088ff, #00ff88);
@@ -48,117 +48,46 @@
             50% { background-position: 100% 50%; }
         }
         
-        .subtitle {
-            font-size: 1.3em;
-            margin-bottom: 40px;
-            opacity: 0.9;
+        .tagline {
+            font-size: 1.2em;
+            margin-bottom: 30px;
             color: #fff;
         }
         
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .project-card {
-            background: rgba(0, 0, 0, 0.6);
-            border: 2px solid rgba(0, 255, 136, 0.3);
-            border-radius: 16px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .project-card:hover {
-            border-color: rgba(0, 255, 136, 0.8);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
-        }
-        
-        .project-title {
-            font-size: 1.8em;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #00ff88;
-        }
-        
-        .project-description {
-            color: #ccc;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-        
-        .project-features {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            text-align: left;
-        }
-        
-        .project-features li {
-            padding: 5px 0;
-            color: #aaa;
-            position: relative;
-            padding-left: 20px;
-        }
-        
-        .project-features li:before {
-            content: "▶";
-            color: #00ff88;
-            position: absolute;
-            left: 0;
-            font-size: 0.8em;
-        }
-        
-        .visit-btn {
+        .launch-btn {
             display: inline-block;
             background: linear-gradient(135deg, #00ff88, #00cc6a);
             color: #000;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 20px 40px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 20px;
+            font-size: 1.3em;
             transition: all 0.3s ease;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 20px rgba(0, 255, 136, 0.4);
         }
         
-        .visit-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
+        .launch-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 255, 136, 0.6);
         }
         
-        .main-project {
-            border-color: rgba(255, 0, 136, 0.6);
-            background: rgba(255, 0, 136, 0.1);
+        .features {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
         
-        .main-project:hover {
-            border-color: rgba(255, 0, 136, 0.9);
-            box-shadow: 0 10px 30px rgba(255, 0, 136, 0.3);
-        }
-        
-        .main-project .project-title {
-            color: #ff0088;
-        }
-        
-        .main-project .visit-btn {
-            background: linear-gradient(135deg, #ff0088, #ff0066);
-            color: white;
-        }
-        
-        .main-project .visit-btn:hover {
-            box-shadow: 0 5px 15px rgba(255, 0, 136, 0.4);
-        }
-        
-        .footer {
-            margin-top: 40px;
-            text-align: center;
-            color: #666;
+        .feature-tag {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            padding: 6px 12px;
+            border-radius: 15px;
+            color: #00ff88;
             font-size: 0.9em;
         }
         
@@ -167,77 +96,29 @@
                 font-size: 2.5em;
             }
             
-            .project-grid {
-                grid-template-columns: 1fr;
+            .container {
+                padding: 30px 20px;
             }
             
-            .container {
-                padding: 20px;
+            .features {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="title">MemeMePiano</h1>
-        <p class="subtitle">Audio Remixer & Creative Tools Collection</p>
+        <h1 class="title">ReReRemixer</h1>
+        <p class="tagline">Record or upload audio → Get algorithmic remixes</p>
         
-        <div class="project-grid">
-            <a href="ReReRemixerV1_01/index.html" class="project-card main-project">
-                <h2 class="project-title">ReRe-Remixer V1.01</h2>
-                <p class="project-description">
-                    The flagship audio remixer with advanced algorithmic remixing capabilities. 
-                    Record or upload audio and create unique remixes with customizable note durations and rhythmic patterns.
-                </p>
-                <ul class="project-features">
-                    <li>Audio recording and file upload</li>
-                    <li>Real-time waveform visualization</li>
-                    <li>Probability-weighted note selection</li>
-                    <li>Customizable BPM and envelope controls</li>
-                    <li>Multiple remix presets (Chop, Shuffle, Swing, etc.)</li>
-                    <li>Advanced audio processing with Web Audio API</li>
-                </ul>
-                <div class="visit-btn">Visit ReRe-Remixer</div>
-            </a>
-            
-            <a href="youtuberemix/index.html" class="project-card">
-                <h2 class="project-title">YouTube Remixer V1.0</h2>
-                <p class="project-description">
-                    Remix YouTube videos with algorithmic slicing. Paste any YouTube URL and create 
-                    unique remixes by controlling video playback timing and seeking.
-                </p>
-                <ul class="project-features">
-                    <li>YouTube URL input and video embedding</li>
-                    <li>Random video slice selection</li>
-                    <li>Customizable note duration probabilities</li>
-                    <li>BPM-based timing control</li>
-                    <li>Real-time remix generation</li>
-                    <li>YouTube IFrame API integration</li>
-                </ul>
-                <div class="visit-btn">Visit YouTube Remixer</div>
-            </a>
-            
-            <a href="simplepiano/index.html" class="project-card">
-                <h2 class="project-title">Simple Piano Remixer</h2>
-                <p class="project-description">
-                    A simplified version of the remixer focused on core functionality. 
-                    Perfect for understanding the basic remixing concepts and algorithms.
-                </p>
-                <ul class="project-features">
-                    <li>Streamlined interface</li>
-                    <li>Core remixing algorithms</li>
-                    <li>Basic audio controls</li>
-                    <li>Educational purpose</li>
-                    <li>Easy to understand codebase</li>
-                    <li>Perfect for learning</li>
-                </ul>
-                <div class="visit-btn">Visit Simple Piano</div>
-            </a>
-        </div>
+        <a href="ReReRemixer_v1_01/index.html" class="launch-btn">Try It Now</a>
         
-        <div class="footer">
-            <p>Explore the collection of audio remixing tools and creative applications.</p>
-            <p>Built with Web Audio API, Canvas, and modern web technologies.</p>
+        <div class="features">
+            <span class="feature-tag">Live Recording</span>
+            <span class="feature-tag">File Upload</span>
+            <span class="feature-tag">Smart Algorithms</span>
+            <span class="feature-tag">Real-time</span>
         </div>
     </div>
 </body>
