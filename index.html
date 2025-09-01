@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReReRemixer V1.01</title>
+    <title>ReReRemixer</title>
     <style>
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -91,6 +91,69 @@
             font-size: 0.9em;
         }
         
+        .version-selector {
+            margin: 30px 0;
+        }
+        
+        .version-selector h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+        
+        .version-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .version-btn {
+            display: flex;
+            flex-direction: column;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 15px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 350px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .version-btn:hover {
+            border-color: rgba(0, 255, 136, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 255, 136, 0.2);
+        }
+        
+        .version-btn.newest {
+            border-color: rgba(0, 255, 136, 0.6);
+            background: rgba(0, 255, 136, 0.05);
+        }
+        
+        .version-btn.newest:hover {
+            border-color: rgba(0, 255, 136, 0.8);
+            box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
+        }
+        
+        .version-number {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #00ff88;
+            margin-bottom: 5px;
+        }
+        
+
+        
+        .version-features {
+            font-size: 0.9em;
+            color: #ccc;
+            line-height: 1.3;
+        }
+        
         @media (max-width: 768px) {
             .title {
                 font-size: 2.5em;
@@ -104,6 +167,18 @@
                 flex-direction: column;
                 align-items: center;
             }
+            
+            .version-btn {
+                padding: 12px 15px;
+            }
+            
+            .version-number {
+                font-size: 1.2em;
+            }
+            
+            .version-features {
+                font-size: 0.8em;
+            }
         }
     </style>
 </head>
@@ -112,7 +187,23 @@
         <h1 class="title">ReReRemixer</h1>
         <p class="tagline">Record or upload audio → Get algorithmic remixes</p>
         
-        <a href="ReReRemixer_v1_01/index.html" class="launch-btn">Try It Now</a>
+        <div class="version-selector">
+            <h3>Choose Version:</h3>
+            <div class="version-buttons">
+                <a href="ReReRemixer_v1_02/index.html" class="version-btn newest">
+                    <span class="version-number">v1.02</span>
+                    <span class="version-features">Remix uploaded/recorded song + synth drums</span>
+                </a>
+                <a href="ReReRemixer_v1_01/index.html" class="version-btn">
+                    <span class="version-number">v1.01</span>
+                    <span class="version-features">Remix uploaded/recorded song with wet/dry adjustment</span>
+                </a>
+                <a href="mememepiano_v1_01/index.html" class="version-btn">
+                    <span class="version-number">v1.00</span>
+                    <span class="version-features">Remix uploaded/recorded song</span>
+                </a>
+            </div>
+        </div>
         
         <div class="features">
             <span class="feature-tag">Live Recording</span>
